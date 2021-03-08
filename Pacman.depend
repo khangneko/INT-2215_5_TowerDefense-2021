@@ -5,9 +5,17 @@
 	<iostream>
 	<SDL.h>
 
-1615201428 source:e:\study\ltnc\int2215-5\pacman\int-2215_5_pacman-2021\main.cpp
+1615210405 source:e:\study\ltnc\int2215-5\pacman\int-2215_5_pacman-2021\main.cpp
 	<exception>
 	<string>
 	<iostream>
 	<SDL.h>
+	"Game.h"
+
+1615210574 source:e:\study\ltnc\int2215-5\pacman\int-2215_5_pacman-2021\game.cpp
+	"Game.h"
+
+1615210574 e:\study\ltnc\int2215-5\pacman\int-2215_5_pacman-2021\game.h
+	"SDL.h"
+	<iostream>
 
