@@ -19,3 +19,17 @@
 	"SDL.h"
 	<iostream>
 
+1619866405 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\game.cpp
+	"Game.h"
+
+1619866405 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\game.h
+	"SDL.h"
+	<iostream>
+
+1619866405 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\main.cpp
+	<exception>
+	<string>
+	<iostream>
+	<SDL.h>
+	"Game.h"
+
