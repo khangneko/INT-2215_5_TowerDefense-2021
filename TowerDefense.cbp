@@ -2,17 +2,18 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Pacman" />
+		<Option title="TowerDefense" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Pacman" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/TowerDefense" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -31,8 +33,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="D:/SDL2-2.0.14/x86_64-w64-mingw32/include" />
+			<Add directory="D:/SDL2_image-2.0.5/x86_64-w64-mingw32/include/SDL2" />
 		</Compiler>
 		<Linker>
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image" />
 			<Add library="mingw32" />
 			<Add library="SDL2main" />
 			<Add library="SDL2.dll" />
@@ -41,13 +45,73 @@
 			<Add library="winmm" />
 			<Add library="dxguid" />
 			<Add directory="D:/SDL2-2.0.14/x86_64-w64-mingw32/lib" />
+			<Add directory="D:/SDL2_image-2.0.5/i686-w64-mingw32/lib" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
-		<Unit filename="Game.cpp" />
-		<Unit filename="Game.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="Assets/Bullet/towerDefense_tile252.png" />
+		<Unit filename="Assets/Bullet/towerDefense_tile272.png" />
+		<Unit filename="Assets/Bullet/towerDefense_tile295.png" />
+		<Unit filename="Assets/Enemy/Boss.png" />
+		<Unit filename="Assets/Enemy/Normal.png" />
+		<Unit filename="Assets/Enemy/Smaller.png" />
+		<Unit filename="Assets/Enemy/Tanker.png" />
+		<Unit filename="Assets/Enemy/towerDefense_tile246.png" />
+		<Unit filename="Assets/Enemy/towerDefense_tile247.png" />
+		<Unit filename="Assets/Enemy/towerDefense_tile248.png" />
+		<Unit filename="Assets/Enemy/towerDefense_tile270.png" />
+		<Unit filename="Assets/Font/Acme-Regular.ttf" />
+		<Unit filename="Assets/Music/Attack.mp3" />
+		<Unit filename="Assets/Music/Death.mp3" />
+		<Unit filename="Assets/Music/Game Over.mp3" />
+		<Unit filename="Assets/Music/Menu.mp3" />
+		<Unit filename="Assets/Music/Nuke.mp3" />
+		<Unit filename="Assets/Music/Theme.mp3" />
+		<Unit filename="Assets/Music/Tower Build.mp3" />
+		<Unit filename="Assets/Plane/boom.gif" />
+		<Unit filename="Assets/Plane/plane.png" />
+		<Unit filename="Assets/Plane/shadow.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile024.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile069.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile070.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile071.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile072.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile073.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile092.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile093.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile094.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile095.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile096.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile115.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile116.png" />
+		<Unit filename="Assets/Tile/towerDefense_tile117.png" />
+		<Unit filename="Assets/Tower/250_preplace.png" />
+		<Unit filename="Assets/Tower/Machine Gun Base.png" />
+		<Unit filename="Assets/Tower/Machine Gun Button.png" />
+		<Unit filename="Assets/Tower/Machine Gun.png" />
+		<Unit filename="Assets/Tower/Normal Base.png" />
+		<Unit filename="Assets/Tower/Normal Button.png" />
+		<Unit filename="Assets/Tower/Normal.png" />
+		<Unit filename="Assets/Tower/Normal_preplace.png" />
+		<Unit filename="Assets/Tower/Sniper Base.png" />
+		<Unit filename="Assets/Tower/Sniper Button.png" />
+		<Unit filename="Assets/Tower/Sniper.png" />
+		<Unit filename="Assets/Tower/Sniper_preplace.png" />
+		<Unit filename="Assets/ui/background.jpg" />
+		<Unit filename="Assets/ui/cropped-1352-768-53625.jpg" />
+		<Unit filename="Assets/ui/gameover.png" />
+		<Unit filename="Assets/ui/howtoplay.png" />
+		<Unit filename="Assets/ui/ui_choose.jpg" />
+		<Unit filename="h/Constants.h" />
+		<Unit filename="h/Game.h" />
+		<Unit filename="h/GameObject.h" />
+		<Unit filename="h/Map.h" />
+		<Unit filename="h/TextureManager.h" />
+		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/GameObject.cpp" />
+		<Unit filename="src/TextureManager.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

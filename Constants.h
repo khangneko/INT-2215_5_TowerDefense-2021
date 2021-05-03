@@ -1,0 +1,14 @@
+#ifndef CONSTANTS_H_
+#define CONSTANTS_H_
+
+const int TILE_SIZE = 64;
+const int TILE_HORIZONTAL = 18;
+const int TILE_VERTICAL = 12;
+
+const int UI_HORIZONTAL = 200;
+const int GAME_WIDTH = TILE_SIZE*TILE_HORIZONTAL;
+const int GAME_HEIGHT = TILE_SIZE*TILE_VERTICAL;
+const int SCREEN_WIDTH = GAME_WIDTH + UI_HORIZONTAL;
+const int SCREE_HEIGHT = GAME_HEIGHT;
+
+#endif // CONSTANTS_H_

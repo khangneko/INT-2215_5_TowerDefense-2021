@@ -3,10 +3,12 @@
 
 #include "SDL.h"
 #include <iostream>
+#include "Map.h"
+
 
 class Game {
 public:
-    Game(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
+    Game();
     ~Game();
     void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 
@@ -20,7 +22,10 @@ private:
     int count = 0;
     bool isRunning;
     SDL_Window *window;
-    SDL_Renderer *renderer;
+    SDL_Renderer* renderer;
+
+
+
 };
 
 
