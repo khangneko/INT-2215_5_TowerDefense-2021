@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Constants.h"
 
+
 Game* game = nullptr;
 int main( int argc, char * argv[] )
 {
@@ -14,7 +15,7 @@ int main( int argc, char * argv[] )
     int frameTime;
 
     game = new Game();
-    game->init("TowerDefense", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREE_HEIGHT, false);
+    game->init("TowerDefense", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, false);
     while(game -> running())
     {
         frameStart = SDL_GetTicks();

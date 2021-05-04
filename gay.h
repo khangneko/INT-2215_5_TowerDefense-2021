@@ -1,12 +1,6 @@
-#ifndef GAY_H_INCLUDED
-#define GAY_H_INCLUDED
+#include "GameObject.h"
 
-class gay
+class gay : public GameObject
 {
-    public:
-  static void foo()
-  {
-      std::cout << "gay";
-  }
+
 };
-#endif // GAY_H_INCLUDED

@@ -9,8 +9,9 @@
 class TextureManager
 {
     public:
-        static SDL_Texture* loadTexture(std::string filePath, SDL_Renderer* renderer);
-        static void draw(SDL_Renderer* renderer, SDL_Texture* texture, SDL_Rect rect);
+        static SDL_Texture* loadTexture(std::string filePath);
+        static void draw(SDL_Texture* texture, SDL_Rect rect);
+        static void draw(SDL_Texture* texture, SDL_Rect rect, double angle);
 };
 
 #endif // TEXTUREMANAGER_H

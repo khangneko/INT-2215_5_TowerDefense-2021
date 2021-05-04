@@ -2,20 +2,24 @@
 #define GAMEOBJECT_H
 #include <SDL_image.h>
 #include "Game.h"
+#include <string>
 
 
 class GameObject
 {
 public:
-    GameObject(const char* textureSheet, SDL_Renderer* renderer, int xpos, int ypos);
-    ~GameObject();
-    void update();
-    void render(SDL_Renderer* renderer);
+    GameObject(std::string filePath, int xpos, int ypos);
+    virtual void update();
+    void render();
+    int getXpos();
+    int getYpos();
 
 
-private:
+protected:
     int xpos;
     int ypos;
+    double angle = -90;
+    std::string filePath;
 
     SDL_Texture* objTexture;
     SDL_Rect rect;

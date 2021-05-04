@@ -19,17 +19,18 @@
 	"SDL.h"
 	<iostream>
 
-1620046402 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\game.cpp
+1620091325 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\game.cpp
 	"Game.h"
 	"TextureManager.h"
 	"Map.h"
+	"Enemy.h"
 
-1620043836 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\game.h
+1620090658 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\game.h
 	"SDL.h"
 	<iostream>
-	"Map.h"
+	<vector>
 
-1620042285 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\main.cpp
+1620071810 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\main.cpp
 	<exception>
 	<string>
 	<iostream>
@@ -102,32 +103,40 @@
 	"../h/TextureManager.h"
 	"../h/Constants.h"
 
-1620045929 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\map.h
+1620060898 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\map.h
 	<string>
 	"TextureManager.h"
 	"Constants.h"
 
-1620044308 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\texturemanager.h
+1620072523 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\texturemanager.h
 	<string>
 	"Game.h"
 	<SDL_image.h>
 	<SDL.h>
 
-1620033793 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\constants.h
+1620086732 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\constants.h
 
-1620042285 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\gameobject.cpp
+1620074047 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\gameobject.cpp
 	"GameObject.h"
 	"TextureManager.h"
 
-1620055227 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\gameobject.h
+1620090976 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\gameobject.h
 	<SDL_image.h>
 	"Game.h"
+	<string>
 
 1620042874 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\gay.h
 
-1620045863 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\texturemanager.cpp
+1620072523 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\texturemanager.cpp
 	"TextureManager.h"
 
-1620046510 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\map.cpp
+1620071082 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\map.cpp
 	"Map.h"
+
+1620092395 source:e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\enemy.cpp
+	"Enemy.h"
+
+1620092368 e:\study\ltnc\int2215-5\towerdefense\int-2215_5_towerdefense-2021\enemy.h
+	"GameObject.h"
+	"Constants.h"
 

@@ -103,15 +103,18 @@
 		<Unit filename="Assets/ui/gameover.png" />
 		<Unit filename="Assets/ui/howtoplay.png" />
 		<Unit filename="Assets/ui/ui_choose.jpg" />
-		<Unit filename="h/Constants.h" />
-		<Unit filename="h/Game.h" />
-		<Unit filename="h/GameObject.h" />
-		<Unit filename="h/Map.h" />
-		<Unit filename="h/TextureManager.h" />
-		<Unit filename="src/Game.cpp" />
-		<Unit filename="src/GameObject.cpp" />
-		<Unit filename="src/TextureManager.cpp" />
-		<Unit filename="src/main.cpp" />
+		<Unit filename="Constants.h" />
+		<Unit filename="Enemy.cpp" />
+		<Unit filename="Enemy.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="GameObject.cpp" />
+		<Unit filename="GameObject.h" />
+		<Unit filename="Map.cpp" />
+		<Unit filename="Map.h" />
+		<Unit filename="TextureManager.cpp" />
+		<Unit filename="TextureManager.h" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

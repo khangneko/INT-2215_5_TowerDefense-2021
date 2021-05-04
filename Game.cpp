@@ -1,8 +1,11 @@
 #include "Game.h"
 #include "TextureManager.h"
 #include "Map.h"
+#include "Enemy.h"
 
+SDL_Renderer* Game::renderer = NULL;
 Map* map;
+std::vector<Enemy*> enemies;
 Game::Game()
 {
 
@@ -32,8 +35,6 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         isRunning = true;
     }
     map = new Map();
-
-
 }
 
 void Game::handleEvents()
@@ -53,13 +54,48 @@ void Game::handleEvents()
 
 void Game::update()
 {
-
+    if (enemiesCount < enemiesNumber && isSpawning)
+    {
+        if (tick % SPAWN_RATE == 0)
+        {
+            spawnEnemies();
+            enemiesCount++;
+        }
+    }
+    else
+    {
+        tick = 0;
+        enemiesCount = 0;
+        isSpawning = false;
+    }
+    for (int i = 0; i < enemies.size(); i++)
+    {
+        if (enemies[i]->isDead() || enemies[i]->isOutOfBound())
+        {
+            Enemy* e = enemies[i];
+            enemies.erase(enemies.begin() + i -1);
+            delete e;
+        }
+        enemies[i]->update();
+    }
+    tick++;
 }
+
+void Game::spawnEnemies()
+{
+    Enemy* enemy = new Enemy(ENEMY_FILE_PATH, SPAWN_X, SPAWN_Y);
+    enemies.push_back(enemy);
+}
+
 
 void Game::render()
 {
     SDL_RenderClear(renderer);
-    map->drawMap(renderer);
+    map->render();
+    for (int i = 0; i < enemies.size(); i++)
+    {
+        enemies[i]->render();
+    }
     SDL_RenderPresent(renderer);
 }
 void Game::clean()

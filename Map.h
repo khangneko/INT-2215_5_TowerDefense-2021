@@ -9,8 +9,10 @@ using namespace std;
 class Map
 {
 public:
-    void drawMap(SDL_Renderer* renderer);
-private:
+    void drawMap();
+    void drawUI();
+    void render();
+
     int path[12][18] =
     {
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
