@@ -4,6 +4,7 @@
 #include "SDL.h"
 #include <iostream>
 #include <vector>
+#include "Constants.h"
 
 
 class Game {
@@ -16,6 +17,7 @@ public:
     void handleEvents();
     void update();
     void spawnEnemies();
+    void placeTower(int xPos, int yPos);
     void render();
     void clean();
     bool running();
@@ -23,11 +25,12 @@ public:
 private:
     int tick = 0;
     int waveCount = 0;
-    int enemiesNumber = 5;
+    int enemiesNumber = ENEMY_NUMBER;
     int enemiesCount = 0;
     bool isSpawning = true;
     bool waveEnd = false;
     bool isRunning;
+    bool isPlacingTower = false;
     SDL_Window *window;
 
 

@@ -22,14 +22,18 @@ void GameObject::render()
     TextureManager::draw(objTexture, rect, this->angle);
 }
 
-int GameObject::getXpos()
+int GameObject::getXPos()
 {
     return this->xpos;
 }
 
-int GameObject::getYpos()
+int GameObject::getYPos()
 {
     return this->ypos;
 }
 
+SDL_Texture* GameObject::getObjTexture()
+{
+    return this->objTexture;
+}
 

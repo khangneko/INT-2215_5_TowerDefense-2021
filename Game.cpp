@@ -2,10 +2,14 @@
 #include "TextureManager.h"
 #include "Map.h"
 #include "Enemy.h"
+#include "Button.h"
+#include "Tower.h"
 
 SDL_Renderer* Game::renderer = NULL;
 Map* map;
 std::vector<Enemy*> enemies;
+std::vector<Tower*> towers;
+Button* button;
 Game::Game()
 {
 
@@ -35,9 +39,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         isRunning = true;
     }
     map = new Map();
+    button = new Button(1190, 100);
 }
 
-void Game::handleEvents()
+/*void Game::handleEvents()
 {
     SDL_Event event;
     SDL_PollEvent(&event);
@@ -50,6 +55,30 @@ void Game::handleEvents()
     default:
         break;
     }
+}*/
+
+void Game::handleEvents()
+{
+    SDL_Event event;
+    SDL_PollEvent(&event);
+    if(event.type == SDL_QUIT)
+    {
+        isRunning = false;
+    }
+    button->handleEvent(&event);
+    if(button->isMouseInside() && event.type == SDL_MOUSEBUTTONDOWN)
+    {
+        isPlacingTower = true;
+        std::cout << "GODLIKE!!!";
+    }
+    /*if(isPlacingTower && event.type == SDL_MOUSEBUTTONDOWN && !button->isMouseInside())
+    {
+        int x, y;
+        SDL_GetMouseState(&x, &y);
+        Tower* tower = new Tower(TOWER_FILE_PATH, x, y);
+        towers.push_back(tower);
+        isPlacingTower = false;
+    }*/
 }
 
 void Game::update()
@@ -68,16 +97,40 @@ void Game::update()
         enemiesCount = 0;
         isSpawning = false;
     }
-    for (int i = 0; i < enemies.size(); i++)
+
+    if (!towers.empty())
     {
-        if (enemies[i]->isDead() || enemies[i]->isOutOfBound())
+        for (int i =0; i < towers.size(); i++)
         {
-            Enemy* e = enemies[i];
-            enemies.erase(enemies.begin() + i -1);
-            delete e;
+            if(!enemies.empty())
+            {
+
+                for(int j = 0; j < enemies.size(); j++)
+                {
+                    if (towers[i]->isEnemyInRange(enemies[j]) && !(towers[i]->hasTarget()))
+                    {
+                        towers[i]->setTartget(enemies[j]);
+                    }
+                }
+            }
+            towers[i]->update();
         }
-        enemies[i]->update();
     }
+
+    if (!enemies.empty())
+    {
+        for (int i = 0; i < enemies.size(); i++)
+        {
+            if (enemies[i]->isDead() || enemies[i]->isOutOfBound())
+            {
+                Enemy* e = enemies[i];
+                enemies.erase(enemies.begin() + i -1);
+                delete e;
+            }
+            else enemies[i]->update();
+        }
+    }
+    if (enemies.empty()) waveEnd = true;
     tick++;
 }
 
@@ -92,10 +145,19 @@ void Game::render()
 {
     SDL_RenderClear(renderer);
     map->render();
+    button->render();
+    if(!towers.empty())
+    {
+        for (int i = 0; i < towers.size(); i++)
+        {
+            towers[i]->render();
+        }
+    }
     for (int i = 0; i < enemies.size(); i++)
     {
         enemies[i]->render();
     }
+
     SDL_RenderPresent(renderer);
 }
 void Game::clean()

@@ -11,6 +11,9 @@ public:
     void update();
     bool isDead();
     bool isOutOfBound();
+    void setHealth(int health);
+    int getHealth();
+
 private:
     int health = ENEMY_HEALTH;
     int speed = ENEMY_SPEED;

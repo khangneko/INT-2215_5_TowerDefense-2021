@@ -103,6 +103,8 @@
 		<Unit filename="Assets/ui/gameover.png" />
 		<Unit filename="Assets/ui/howtoplay.png" />
 		<Unit filename="Assets/ui/ui_choose.jpg" />
+		<Unit filename="Button.cpp" />
+		<Unit filename="Button.h" />
 		<Unit filename="Constants.h" />
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.h" />
@@ -114,6 +116,8 @@
 		<Unit filename="Map.h" />
 		<Unit filename="TextureManager.cpp" />
 		<Unit filename="TextureManager.h" />
+		<Unit filename="Tower.cpp" />
+		<Unit filename="Tower.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

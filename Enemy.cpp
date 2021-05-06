@@ -72,3 +72,13 @@ void Enemy::update()
 
     }
 }
+
+void Enemy::setHealth(int health)
+{
+    this->health = health;
+}
+
+int Enemy::getHealth()
+{
+    return this->health;
+}

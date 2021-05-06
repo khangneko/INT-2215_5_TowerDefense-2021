@@ -11,8 +11,9 @@ public:
     GameObject(std::string filePath, int xpos, int ypos);
     virtual void update();
     void render();
-    int getXpos();
-    int getYpos();
+    int getXPos();
+    int getYPos();
+    SDL_Texture* getObjTexture();
 
 
 protected:
@@ -23,6 +24,7 @@ protected:
 
     SDL_Texture* objTexture;
     SDL_Rect rect;
+
 };
 
 #endif // GAMEOBJECT_H

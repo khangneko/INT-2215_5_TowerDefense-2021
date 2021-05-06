@@ -19,15 +19,21 @@ const int SCREEN_HEIGHT = GAME_HEIGHT;
 
 const int SPAWN_X = 100;
 const int SPAWN_Y = 672;
-const int SPAWN_RATE = 10;
+const int SPAWN_RATE = 20;
 
+const std::string TOWER_FILE_PATH = "Assets/Tower/normal.png";
 const int TOWER_COST = 10;
 const int TOWER_DAMAGE = 10;
-const int TOWER_RANGE = 10;
+const double TOWER_RANGE = 100;
 
 const std::string ENEMY_FILE_PATH = "Assets/Enemy/Normal.png";
 const int ENEMY_HEALTH = 10;
 const int ENEMY_SPEED = 30;
 const int ENEMY_BOUNTY = 20;
+const int ENEMY_NUMBER = 5;
+
+const int BUTTON_WIDTH = 128;
+const int BUTTON_HEIGHT = 128;
+
 
 #endif // CONSTANTS_H_
