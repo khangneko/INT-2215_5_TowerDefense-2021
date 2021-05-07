@@ -40,7 +40,7 @@ void Button::handleEvent(SDL_Event* e)
     }
 }
 
-void Button::render()
+void Button::render(SDL_Renderer* renderer)
 {
     SDL_Texture* buttonTexture = TextureManager::loadTexture("Assets/Tower/Normal Button.png");
     SDL_Rect rect;
@@ -48,6 +48,6 @@ void Button::render()
     rect.y = mPosition.y;
     rect.w = BUTTON_WIDTH;
     rect.h = BUTTON_HEIGHT;
-    TextureManager::draw(buttonTexture, rect);
+    TextureManager::draw(renderer, buttonTexture, rect);
     SDL_DestroyTexture(buttonTexture);
 }

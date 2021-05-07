@@ -9,9 +9,9 @@ SDL_Texture* TextureManager::loadTexture(std::string filePath)
     return texture;
 }
 
-void TextureManager::draw(SDL_Texture* texture, SDL_Rect rect)
+void TextureManager::draw(SDL_Renderer* renderer, SDL_Texture* texture, SDL_Rect rect)
 {
-    SDL_RenderCopy(Game::renderer, texture, NULL, &rect);
+    SDL_RenderCopy(renderer, texture, NULL, &rect);
 }
 
 void TextureManager::draw(SDL_Texture* texture, SDL_Rect rect, double angle)

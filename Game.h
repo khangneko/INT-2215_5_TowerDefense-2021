@@ -32,6 +32,7 @@ private:
     bool isRunning;
     bool isPlacingTower = false;
     SDL_Window *window;
+    SDL_Renderer* uiRenderer;
 
 
 

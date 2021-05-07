@@ -28,7 +28,7 @@ const double TOWER_RANGE = 100;
 
 const std::string ENEMY_FILE_PATH = "Assets/Enemy/Normal.png";
 const int ENEMY_HEALTH = 10;
-const int ENEMY_SPEED = 30;
+const int ENEMY_SPEED = 10;
 const int ENEMY_BOUNTY = 20;
 const int ENEMY_NUMBER = 5;
 

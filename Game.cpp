@@ -31,6 +31,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
             std::cout << "Window created!" << std::endl;
         }
         renderer = SDL_CreateRenderer(window, -1, 0);
+        uiRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
         if (renderer)
         {
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -40,6 +41,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     }
     map = new Map();
     button = new Button(1190, 100);
+    std::cout << 100;
+
+
 }
 
 /*void Game::handleEvents()
@@ -71,33 +75,18 @@ void Game::handleEvents()
         isPlacingTower = true;
         std::cout << "GODLIKE!!!";
     }
-    /*if(isPlacingTower && event.type == SDL_MOUSEBUTTONDOWN && !button->isMouseInside())
+    if(isPlacingTower && event.type == SDL_MOUSEBUTTONDOWN && !button->isMouseInside())
     {
         int x, y;
         SDL_GetMouseState(&x, &y);
         Tower* tower = new Tower(TOWER_FILE_PATH, x, y);
         towers.push_back(tower);
         isPlacingTower = false;
-    }*/
+    }
 }
 
 void Game::update()
 {
-    if (enemiesCount < enemiesNumber && isSpawning)
-    {
-        if (tick % SPAWN_RATE == 0)
-        {
-            spawnEnemies();
-            enemiesCount++;
-        }
-    }
-    else
-    {
-        tick = 0;
-        enemiesCount = 0;
-        isSpawning = false;
-    }
-
     if (!towers.empty())
     {
         for (int i =0; i < towers.size(); i++)
@@ -131,6 +120,20 @@ void Game::update()
         }
     }
     if (enemies.empty()) waveEnd = true;
+    if (enemiesCount < enemiesNumber && isSpawning)
+    {
+        if (tick % SPAWN_RATE == 0)
+        {
+            spawnEnemies();
+            enemiesCount++;
+        }
+    }
+    else
+    {
+        tick = 0;
+        enemiesCount = 0;
+        isSpawning = false;
+    }
     tick++;
 }
 
@@ -144,8 +147,8 @@ void Game::spawnEnemies()
 void Game::render()
 {
     SDL_RenderClear(renderer);
-    map->render();
-    button->render();
+    map->render(renderer);
+    button->render(renderer);
     if(!towers.empty())
     {
         for (int i = 0; i < towers.size(); i++)

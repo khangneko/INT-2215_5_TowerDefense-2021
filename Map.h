@@ -9,9 +9,10 @@ using namespace std;
 class Map
 {
 public:
-    void drawMap();
-    void drawUI();
-    void render();
+    Map();
+    void drawMap(SDL_Renderer* renderer);
+    void drawUI(SDL_Renderer* renderer);
+    void render(SDL_Renderer* renderer);
 
     int path[12][18] =
     {
@@ -44,7 +45,9 @@ public:
         {"092","093","094","024","024","024","024","024","115","116","116","116","116","116","116","116","116","116",}
     };
 
-
+private:
+    SDL_Renderer* uiRenderer;
+    SDL_Texture* tileTexture[12][18];
 };
 
 #endif // MAP_H_
